@@ -5,6 +5,9 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const imageElement = document.getElementById('image-container')
 const myList = document.getElementById('myList')
+const progressBar = document.getElementById('progress-bar')
+const progressBarTwo = document.getElementById('progress-bar-two')
+
 
 
 var order = 0;
@@ -12,7 +15,10 @@ var chaotic = 0;
 var noob = 0;
 var strategist = 0;
 var currentEffect = 0;
-
+var chaoticOverall = 50;
+var chaoticPercentage = 0;
+var strategistOverall = 50;
+var strategistPercentage = 0;
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -32,7 +38,7 @@ function startGame() {
 
 function setNextQuestion() {
   resetState()
-  showQuestion(shuffledQuestions[currentQuestionIndex])
+  showQuestion(questions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
@@ -80,23 +86,9 @@ function selectAnswer(e) {
   do_effect()
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
-  })
-    var node = document.createElement("LI");   
-    var node2 = document.createElement("LI");             
-    var node3 = document.createElement("LI");             
-    var node4 = document.createElement("LI");                       
-    var textnodeThree = document.createTextNode("Order: " +order+"");
-    var textnodeFour = document.createTextNode("Chaotic: " +chaotic+"");
-    var textnodeOne = document.createTextNode("Noob: " +noob+"");         
-    var textnodeTwo = document.createTextNode("Strategist: " +strategist+"");         
-    node.appendChild(textnodeOne);      
-    node2.appendChild(textnodeTwo);   
-    node3.appendChild(textnodeThree);      
-    node4.appendChild(textnodeFour);     
-    myList.appendChild(node);
-    myList.appendChild(node2);        
-    myList.appendChild(node3);        
-    myList.appendChild(node4); 
+  }) 
+    progressBar.value = chaoticOverall;
+    progressBarTwo.value = strategistOverall;
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {               
@@ -110,7 +102,12 @@ function do_effect() {
   if (currentEffect ==2){strategist++}
   if (currentEffect ==3){order++}
   if (currentEffect ==4){chaotic++}
-
+  if (chaotic!=0 || order !=0){
+  chaoticPercentage = 100.0/(chaotic+order)
+  chaoticOverall = chaotic*chaoticPercentage}
+  if (strategist!=0 || noob !=0){
+  strategistPercentage = 100.0/(strategist+noob)
+  strategistOverall = strategist*strategistPercentage}
 }
 
 function setStatusClass(element, correct) {
