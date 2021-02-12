@@ -10,10 +10,10 @@ const progressBarTwo = document.getElementById('progress-bar-two')
 
 
 
-var order = 0;
-var chaotic = 0;
-var noob = 0;
-var strategist = 0;
+var order = 1;
+var chaotic = 1;
+var noob = 1;
+var strategist = 1;
 var currentEffect = 0;
 var chaoticOverall = 50;
 var chaoticPercentage = 0;
@@ -89,7 +89,7 @@ function selectAnswer(e) {
   }) 
     progressBar.value = chaoticOverall;
     progressBarTwo.value = strategistOverall;
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+  if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {               
     startButton.innerText = 'Restart'
