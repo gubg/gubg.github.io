@@ -57,7 +57,7 @@ function showQuestion(question) {
   question.sources.forEach(source => {
     var img = document.createElement('img')
     img.src = source.meme
-    img.style.width = "350px"
+    img.style.width = "45%"
     imageElement.appendChild(img)
   })
 
