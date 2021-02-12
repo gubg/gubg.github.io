@@ -8,7 +8,7 @@ const myList = document.getElementById('myList')
 const progressBar = document.getElementById('progress-bar')
 const progressBarTwo = document.getElementById('progress-bar-two')
 
-//
+
 
 var order = 0;
 var chaotic = 0;
@@ -168,5 +168,16 @@ const questions = [
       { meme: "images/chaos/2/rulebook.jpg"},
       { meme: "images/chaos/2/default.jpg"},
     ]
-  }
+  },
+  {
+    question: 'Which meme is better?',
+    answers: [
+      { text: 'Left', correct: false, effect: 1 },
+      { text: 'Right', correct: true, effect: 2 }
+    ],
+    sources: [
+      { meme: "images/strategy/3/traitor.jpg"},
+      { meme: "images/strategy/3/magic.jpg"},
+    ]
+  },
 ]
