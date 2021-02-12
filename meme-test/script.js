@@ -98,10 +98,10 @@ function selectAnswer(e) {
 }
 
 function do_effect() {
-  if (currentEffect ==1){noob++}
-  if (currentEffect ==2){strategist++}
-  if (currentEffect ==3){order++}
-  if (currentEffect ==4){chaotic++}
+  if (currentEffect ==1){noob+=2}
+  if (currentEffect ==2){strategist+=2}
+  if (currentEffect ==3){order+=2}
+  if (currentEffect ==4){chaotic+=2}
   if (chaotic!=0 || order !=0){
   chaoticPercentage = 100.0/(chaotic+order)
   chaoticOverall = chaotic*chaoticPercentage}
