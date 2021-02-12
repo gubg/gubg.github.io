@@ -8,7 +8,7 @@ const myList = document.getElementById('myList')
 const progressBar = document.getElementById('progress-bar')
 const progressBarTwo = document.getElementById('progress-bar-two')
 
-
+//
 
 var order = 0;
 var chaotic = 0;
