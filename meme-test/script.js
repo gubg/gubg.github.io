@@ -179,5 +179,5 @@ const questions = [
       { meme: "images/strategy/3/traitor.jpg"},
       { meme: "images/strategy/3/magic.jpg"},
     ]
-  },
+  }
 ]
